@@ -1,0 +1,62 @@
+load_file("nrngui.hoc")
+objectvar save_window_, rvp_
+objectvar scene_vector_[10]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,-55,-41)
+scene_vector_[4] = save_window_
+{save_window_.view(0, -55, 100, 14, 96, -1, 300.6, 163.9)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("tuft_nl.sect[44].v(0.75)", 2, 1, 0.8, 0.9, 2)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,-55,-46.3)
+scene_vector_[5] = save_window_
+{save_window_.view(0, -55, 100, 8.7, 94, 278, 300.6, 160.3)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("tuft_nl.sect[46].v(0.75)", 3, 1, 0.8, 0.9, 2)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,-55,-46.1)
+scene_vector_[6] = save_window_
+{save_window_.view(0, -55, 100, 8.9, 99, 558, 297.9, 159.4)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("tuft_nl.sect[35].v(0.5)", 4, 1, 0.8, 0.9, 2)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,-55,-49.2)
+scene_vector_[7] = save_window_
+{save_window_.view(0, -55, 100, 5.8, 514, 560, 300.6, 166.6)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("tuft_nl.sect[28].v(0.625)", 7, 1, 0.8, 0.9, 2)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,-55,-49.2)
+scene_vector_[8] = save_window_
+{save_window_.view(0, -55, 100, 5.8, 513, 278, 300.6, 164.8)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("tuft_nl.sect[20].v(0.75)", 6, 1, 0.8, 0.9, 2)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,-55,-49.2)
+scene_vector_[9] = save_window_
+{save_window_.view(0, -55, 100, 5.8, 513, 1, 300.6, 161.2)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("tuft_nl.sect[13].v(0.75)", 5, 1, 0.8, 0.9, 2)
+}
+objectvar scene_vector_[1]
+{doNotify()}

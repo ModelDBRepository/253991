@@ -1,0 +1,58 @@
+load_file("nrngui.hoc")
+load_file("mulfit.hoc")
+load_file("parameters.hoc")
+load_file("morphology.hoc")
+load_file("membrane.hoc")
+celsius = 36
+
+double epsp[271]
+double epsp_soma[271]
+objref epspf
+epspf = new File()
+epspf.ropen("epsp.txt")
+i=0
+while (!epspf.eof()) {
+    epsp[i]=epspf.scanvar()
+    i=i+1
+}
+epspf.close()
+
+epspf.ropen("epsp_soma.txt")
+i=0
+while (!epspf.eof()) {
+    epsp_soma[i]=epspf.scanvar()
+    i=i+1
+}
+epspf.close()
+
+proc init() {
+    finitialize(Erest)
+    fcurrent()
+    V_soma=soma_sc.v(1)
+    V_primden_beg=tuft_nl.sect[0].v(1)
+    V_experiment=epsp[0]
+    V_experiment_soma=epsp_soma[0]
+}
+
+init()
+
+proc advance() {
+    fadvance()
+    V_soma=soma_sc.v(1)
+    V_primden_beg=tuft_nl.sect[0].v(1)
+    if (int(2*t)>270) {
+        V_experiment=0
+    } else {
+        V_experiment=epsp[int(2*t)]
+    }
+    if (int(2*t)>270) {
+        V_experiment_soma=0
+    } else {
+        V_experiment_soma=epsp_soma[int(2*t)]
+    }
+}
+
+
+load_file("test.ses")
+{doNotify()}
+run()
